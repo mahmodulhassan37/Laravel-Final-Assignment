@@ -1,39 +1,41 @@
 <?php
 
-
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 
+Route::get('/login', 'UserController@loginView');
+Route::post('/login', 'UserController@login');
 
-Route::get('/', function () {
-    echo "index page";
-});
-
-
-Route::get('/welcome', function(){
-	return view('test');
-});
-
-
-Route::get('/login', 'LoginController@index');
-Route::post('/login', ['uses'=>'LoginController@verify']);
-Route::get('/logout', ['uses'=>'logoutController@index']);
-Route::get('/signup','SignupController@index');
-Route::post('signup','LoginController@signup');
+Route::get('/register', 'UserController@registerView');
+Route::post('/register', 'UserController@register');
 
 
 
-Route::middleware(['sess'])->group(function(){
 
-	Route::get('/home', 'HomeController@index');
+Route::get('/admin', 'AdminController@index');
 
-	Route::group(['middleware'=>['type']], function(){
-		Route::get('/home/edit/{id}', 'HomeController@edit');
-		Route::post('/home/edit/{id}', 'HomeController@update');
-		Route::get('/home/delete/{id}', 'HomeController@delete');
-		Route::post('/home/delete/{id}', 'HomeController@destroy');
-	});
-});
+Route::get('/admin/create', 'AdminController@create');
+Route::post('/admin/create', 'AdminController@store');
+
+Route::get('/admin/edit/{id}', 'AdminController@edit');
+Route::post('/admin/edit/{id}', 'AdminController@update');
+
+Route::get('/admin/delete/{id}', 'AdminController@delete');
+Route::post('/admin/delete/{id}', 'AdminController@destroy');
+
+// Employee Routes
+
+Route::get('/employee', 'EmployeeController@index');
+
+Route::get('/employee/create', 'EmployeeController@create');
+Route::post('/employee/create', 'EmployeeController@store');
+
+Route::get('/employee/edit/{id}', 'EmployeeController@edit');
+Route::post('/employee/edit/{id}', 'EmployeeController@update');
+
+Route::get('/employee/delete/{id}', 'EmployeeController@delete');
+Route::post('/employee/delete/{id}', 'EmployeeController@destroy');

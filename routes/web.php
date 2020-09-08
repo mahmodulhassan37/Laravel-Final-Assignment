@@ -21,7 +21,7 @@ Route::get('/welcome', function(){
 Route::get('/login', 'LoginController@index');
 Route::post('/login', ['uses'=>'LoginController@verify']);
 Route::get('/logout', ['uses'=>'logoutController@index']);
-Route::get('/signup''LogicController@signup')
+Route::get('/signup','SignupController@index');
 
 Route::middleware(['sess'])->group(function(){
 

@@ -63,20 +63,4 @@ class HomeController extends Controller
 
     }
 
-    function destroy($id, Request $request){
-    	
-    	$users = $this->getStudentList();
-    	//find student by id & delete
-    	//updated list
-
-    	return view('home.index')->with('users', $users);
-    }
-
-    function getStudentList(){
-    	return  [
-	    			['id'=>'1', 'name'=>'alamin','email'=>'abc@gmail.com', 'password'=>'123'],
-	    			['id'=>'2', 'name'=>'abc','email'=>'abc@aiub.com', 'password'=>'456'],
-	    			['id'=>'3', 'name'=>'xyz','email'=>'xyz@gmail.com', 'password'=>'789']
-				];
-    }
 }

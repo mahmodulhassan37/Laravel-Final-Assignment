@@ -13,21 +13,21 @@
 		<table>
 			<tr>
 				<td>Employer name</td>
-				<td><input type="text" name="name" value=" text"></td>
+				<td><input type="text" name="name" value=" "></td>
 			</tr>
             <tr>
 				<td>Company name</td>
-				<td><input type="text" name="companyname" value="text"></td>
+				<td><input type="text" name="companyname" value=""></td>
 			</tr>
 
             <tr>
 				<td>Contact no</td>
-				<td><input type="text" name="contactno" value="text"></td>
+				<td><input type="text" name="contactno" value=""></td>
 			</tr>
 
             <tr>
 				<td>User Name</td>
-				<td><input type="text" name="username" value="text"></td>
+				<td><input type="text" name="username" value=""></td>
 			</tr>
 
 			<tr>

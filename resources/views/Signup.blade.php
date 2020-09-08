@@ -13,7 +13,7 @@
 		<table>
 			<tr>
 				<td>Employer name</td>
-				<td><input type="text" name="name" value=" "></td>
+				<td><input type="text" name="empname" value=" "></td>
 			</tr>
             <tr>
 				<td>Company name</td>
